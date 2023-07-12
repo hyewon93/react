@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-const DiaryEditor = () => {
+const JournalEditor = () => {
+
+    const authorInput = useRef();
+    const contentInput = useRef();
     
     const [ state, setState ] = useState({
         author: "",
@@ -16,9 +19,21 @@ const DiaryEditor = () => {
     };
 
     const handleSubmit = () => {
-        console.log(state);
 
-        alert("Successfuly submitted!");
+        // Validation
+        if(state.author.length < 1) {
+            alert("Author must not be empty.");
+            authorInput.current.focus();
+            return;
+        }
+
+        if(state.content.length < 5) {
+            alert("Content must be more than 5 characters.");
+            contentInput.current.focus();
+            return;
+        }
+
+        alert("Success!");
     }
 
     return (
@@ -26,6 +41,7 @@ const DiaryEditor = () => {
             <h2>Today's journal</h2>
             <div>
                 <input 
+                    ref={authorInput}
                     value={state.author}
                     onChange={handleChangeState}
                     name="author"
@@ -35,6 +51,7 @@ const DiaryEditor = () => {
             </div>
             <div>
                 <textarea 
+                    ref={contentInput}
                     value={state.content}
                     onChange={handleChangeState}
                     name="content"
@@ -63,4 +80,4 @@ const DiaryEditor = () => {
     );
 };
 
-export default DiaryEditor;
+export default JournalEditor;
