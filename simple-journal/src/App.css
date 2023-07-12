@@ -1,0 +1,7 @@
+.App {margin:0 auto;}
+.JournalEditor { border:1px solid #e5e5e5; text-align:center; padding: 20px; }
+
+.JournalEditor input, .JournalEditor textarea { margin:0 0 20px 0; padding:10px; width:500px; }
+.JournalEditor textarea { width:500px; height:150px; }
+.JournalEditor select { margin:0 0 20px 0; padding:10px; width:500px; }
+.JournalEditor button { cursor:pointer; padding:10px; width:500px; }
