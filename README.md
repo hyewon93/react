@@ -10,7 +10,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project is Tic-Tac-Toe game from [the tutorial on React homepage](https://reactjs.org/tutorial/tutorial.html).
 
+## to-do-list
+
+This project is a simple To-do List with React.
+
+
 ## Learn More
+React 기초 입문 프로젝트 – 흔하디 흔한 할 일 목록 만들기 (ko): https://velopert.com/3480
+
 
 ### Setup for React
 
