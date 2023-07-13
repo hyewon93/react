@@ -1,15 +1,15 @@
 import { useState, useRef } from "react";
 
-const JournalEditor = () => {
+const JournalEditor = ({onCreate}) => {
+
+    const [state, setState] = useState({
+        author: "",
+        content: "",
+        emotion: 1,
+    });
 
     const authorInput = useRef();
     const contentInput = useRef();
-    
-    const [ state, setState ] = useState({
-        author: "",
-        content: "",
-        emotion: 1
-    });
 
     const handleChangeState = (e) => {
         setState({
@@ -33,7 +33,13 @@ const JournalEditor = () => {
             return;
         }
 
-        alert("Success!");
+        onCreate(state.author, state.content, state.emotion);
+
+        setState({
+            author: "",
+            content: "",
+            emotion: 1
+        });
     }
 
     return (
@@ -47,7 +53,8 @@ const JournalEditor = () => {
                     name="author"
                     placeholder="Author"
                     type="text"
-                />
+                /><br/>
+                <span className="notification">Please input author ( more than 1 character )</span>
             </div>
             <div>
                 <textarea 
@@ -57,10 +64,10 @@ const JournalEditor = () => {
                     name="content"
                     placeholder="Journal"
                     type="text"
-                />
+                /><br/>
+                <span className="notification">Please input content ( more than 5 characters )</span>
             </div>
             <div>
-                <span>Today's emotion score :</span>
                 <select 
                     name="emotion"
                     value={state.emotion}
@@ -71,7 +78,8 @@ const JournalEditor = () => {
                     <option value={3}>3</option>
                     <option value={4}>4</option>
                     <option value={5}>5</option>
-                </select>
+                </select><br/>
+                <span className="notification">Please select emotion score</span>
             </div>
             <div>
                 <button onClick={handleSubmit}>Submit</button>

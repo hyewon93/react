@@ -8,7 +8,7 @@ const JournalList = ({journalList}) => {
             <h4>Total {journalList.length} journals</h4>
             <div>
                 {journalList.map((item) => {
-                    return <JournalItem item={item} />
+                    return <JournalItem item={item} key={item.id}/>
                 })}
             </div>
         </div>

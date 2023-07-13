@@ -9,7 +9,7 @@ const JournalItem = ({item}) => {
                     | Author: {item.author} | Emotion Score: {item.emotion} |
                 </span>
                 <br />
-                <span className="Date">{new Date(item.create_date).toLocaleString()}</span>
+                <span className="Date">{new Date(item.created_date).toLocaleString()}</span>
             </div>
             <div className="content">{item.content}</div>
         </div>
