@@ -1,6 +1,6 @@
 import './JournalItem.css';
 
-const JournalItem = ({item}) => {
+const JournalItem = ({item, onDelete}) => {
 
     return (
         <div className="JournalItem">
@@ -12,6 +12,7 @@ const JournalItem = ({item}) => {
                 <span className="Date">{new Date(item.created_date).toLocaleString()}</span>
             </div>
             <div className="content">{item.content}</div>
+            <button onClick={() => {onDelete(item.id);}}>Delete</button>
         </div>
     )
 }

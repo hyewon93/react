@@ -23,10 +23,17 @@ const App = () => {
     setData([newItem, ...data]);
   };
 
+  const onDelete = (targetId) => {
+
+    const newJournalList = data.filter((it) => it.id !== targetId);
+    setData(newJournalList);
+
+  };
+
   return (
     <div className="App">
       <JournalEditor onCreate={onCreate}/>
-      <JournalList journalList={data}/>
+      <JournalList journalList={data} onDelete={onDelete}/>
     </div>
   )
 }
