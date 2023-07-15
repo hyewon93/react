@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import './App.css';
 import JournalEditor from "./components/JournalEditor"
 import JournalList from "./components/JournalList"
@@ -12,8 +12,6 @@ const App = () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/comments")
       .then((res) => res.json());
 
-    console.log(res);
-
     const initData = res.slice(0,20).map((it) => {
       return {
         author: it.email,
@@ -26,8 +24,15 @@ const App = () => {
 
     setData(initData);
   };
-
   useEffect(() => { getData(); }, []);
+
+  const getJournalAnalysis = useMemo(() => {
+    const goodCount = data.filter((it) => it.emotion >= 3).length;
+    const badCount = data.length - goodCount;
+    const goodRatio = ((goodCount / data.length) * 100).toFixed(2) + "%";
+
+    return {goodCount, badCount, goodRatio};
+  }, [data.length]);
 
   const onCreate = (author, content, emotion) => {
     const created_date = new Date().getTime();
@@ -62,9 +67,15 @@ const App = () => {
     );
   };
 
+  const {goodCount, badCount, goodRatio} = getJournalAnalysis;
+
   return (
     <div className="App">
       <JournalEditor onCreate={onCreate}/>
+      <div>Total Journal: {data.length}</div>
+      <div>Good Journals: {goodCount}</div>
+      <div>Bad Journals: {badCount}</div>
+      <div>Ratio of Good Journal: {goodRatio}</div>
       <JournalList journalList={data} onUpdate={onUpdate} onDelete={onDelete}/>
     </div>
   )
