@@ -30,10 +30,21 @@ const App = () => {
 
   };
 
+  const onUpdate = (targetId, newContent) => {
+
+    setData(
+      data.map( (it) =>
+        it.id === targetId
+        ? {...it, content: newContent}
+        : it
+      )
+    );
+  };
+
   return (
     <div className="App">
       <JournalEditor onCreate={onCreate}/>
-      <JournalList journalList={data} onDelete={onDelete}/>
+      <JournalList journalList={data} onUpdate={onUpdate} onDelete={onDelete}/>
     </div>
   )
 }
