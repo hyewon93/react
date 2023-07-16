@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Raleway";
+    font-display: fallback;
+
+    src: url("./Raleway-Regular.ttf") format("truetype"), url("./Raleway-Regular.eot?iefix") format("embedded-opentype");
+
+    font-weight: 400;
+    font-style: normal;
+}
