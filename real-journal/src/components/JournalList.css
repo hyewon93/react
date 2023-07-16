@@ -1,0 +1,9 @@
+.menu_sort {
+    text-align: left;
+}
+.menu_wrapper {
+    margin: 5%;
+}
+.menu_wrapper button {
+    width: 100%;
+}

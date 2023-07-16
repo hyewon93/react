@@ -1,15 +1,14 @@
 import './MyButton.css';
+import Button from 'react-bootstrap/Button';
 
 const MyButton = ({text, type, onClick}) => {
-    const btnType = ["positive", "negative"].includes(type) ? type : "default";
+    const btnType = ["primary", "secondary", "success", "danger", "light"].includes(type) ? type : "primary";
 
     return (
-        <button className={["MyButton", ` MyButton_${btnType}`].join("")} onClick={onClick}>
-            {text}
-        </button>
+        <Button variant={btnType} onClick={onClick}>{text}</Button>
     )
 }
 
-MyButton.defaultPrios = {type: "default"};
+MyButton.defaultProps = {type: "default"};
 
 export default MyButton;

@@ -1,9 +1,12 @@
 .MyHeader {
     border: 1px solid darkgray;
     width: 90%;
-    height: 40px;
+    height: 65px;
     margin: 5% 5%;
     padding: 15px 10px 0 10px;
+    font-family: "YsabeauOffice";
+    font-weight: bold;
+    font-size: 1.5em;
 }
 .head_btn_left {
     float: left;

@@ -1,6 +1,7 @@
 import React, { useReducer, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './pages/Home';
 import New from './pages/New';
