@@ -1,0 +1,17 @@
+.MyButton {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #e6e5e5;
+    border-radius: 3px;
+}
+
+.MyButton_positive {
+    background-color: green;
+    color: white;
+}
+
+.MyButton_negative {
+    background-color: red;
+    color: white;
+}

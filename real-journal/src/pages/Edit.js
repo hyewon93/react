@@ -1,4 +1,6 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
+import MyHeader from "../components/MyHeader";
+import MyButton from "../components/MyButton";
 
 const Edit = () => {
 
@@ -14,6 +16,7 @@ const Edit = () => {
 
     return (
         <div>
+            <MyHeader headText="Edit Journal" leftChild={<MyButton text="<" onClick=""/>} rightChild={<MyButton text="Delete" type="negative" onClick=""/>}/>
             <h1>Edit</h1>
             <button onClick={ () => setSearchParams({who: "winterlood"}) }>QS Change</button>
 

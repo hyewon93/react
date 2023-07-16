@@ -1,0 +1,22 @@
+.MyHeader {
+    border: 1px solid darkgray;
+    width: 90%;
+    height: 40px;
+    margin: 5% 5%;
+    padding: 15px 10px 0 10px;
+}
+.head_btn_left {
+    float: left;
+    width: 33%;
+    text-align: left;
+}
+.head_text {
+    float: left;
+    width: 34%;
+    text-align: center;
+}
+.head_btn_right {
+    float: right;
+    width: 33%;
+    text-align: right;
+}
