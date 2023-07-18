@@ -15,7 +15,7 @@ const JournalItem = ({journal}) => {
         let printedDate = 
             inputDate.getFullYear() + "-" 
             + ((inputDate.getMonth() + 1) > 9 ? (inputDate.getMonth() + 1) : '0' + (inputDate.getMonth() + 1)) + "-" 
-            + inputDate.getDate()
+            + ((inputDate.getDate() + 1) > 9 ? (inputDate.getDate() + 1) : '0' + (inputDate.getDate() + 1))
         ;
     
         return printedDate;
