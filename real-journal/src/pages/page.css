@@ -1,0 +1,20 @@
+.journal-details {
+    text-align: left;
+}
+
+.journal-details > .row {
+    margin-bottom: 20px;
+}
+
+.journal-detail {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.emotion-container {
+    height: auto;
+}
+
+.content-container {
+    min-height: 150px;
+}

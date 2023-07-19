@@ -1,25 +1,16 @@
 .emotion_wrapper {
-    background-color: rgb(236, 236, 236);
     width: 100%;
     text-align: center;
     position: relative;
+    height: 250px;
 }
 
 .emotion_card {
     cursor: pointer;
     position: absolute;
+    opacity: 20%;
 }
 
-.emotion_cover {
-    margin-left: 0px;
-    margin-right: 0px;
-    background: rgb(9 9 9 / 43%);
-    display: block;
-    z-index: 999;
-    opacity: 0.7;
-    position: absolute;
-    border-radius: 0.4rem;
-    width: inherit;
-    height: 160px;
-    cursor: pointer;
+.active > .emotion_card {
+    opacity: 100%;
 }
