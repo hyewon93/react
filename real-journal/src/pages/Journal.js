@@ -46,11 +46,11 @@ const Journal = () => {
                         <h3>Emotion</h3>
                         <Container className="journal-detail">
                             <Row>
-                                <Col><EmotionItem score="5" text="Very Good" active="inactive"/></Col>
-                                <Col><EmotionItem score="4" text="Good" active="active"/></Col>
-                                <Col><EmotionItem score="3" text="Normal" active="inactive"/></Col>
-                                <Col><EmotionItem score="2" text="Bad" active="inactive"/></Col>
-                                <Col><EmotionItem score="1" text="Very Bad" active="inactive"/></Col>
+                                <Col><EmotionItem score="5" text="Very Good" active={originData.emotion === 5 ? "active" : "inactive"}/></Col>
+                                <Col><EmotionItem score="4" text="Good" active={originData.emotion === 4 ? "active" : "inactive"}/></Col>
+                                <Col><EmotionItem score="3" text="Normal" active={originData.emotion === 3 ? "active" : "inactive"}/></Col>
+                                <Col><EmotionItem score="2" text="Bad" active={originData.emotion === 2 ? "active" : "inactive"}/></Col>
+                                <Col><EmotionItem score="1" text="Very Bad" active={originData.emotion === 1 ? "active" : "inactive"}/></Col>
                             </Row>
                         </Container>
                     </Col>
