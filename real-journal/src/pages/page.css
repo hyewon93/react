@@ -1,5 +1,6 @@
 .journal-details {
     text-align: left;
+    width: 80%;
 }
 
 .journal-details > .row {
@@ -9,6 +10,7 @@
 .journal-detail {
     padding: 10px;
     font-size: 20px;
+    font-family: "Raleway";
 }
 
 .emotion-container {
@@ -17,4 +19,30 @@
 
 .content-container {
     min-height: 150px;
+}
+
+.new_form {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.form_group {
+    margin: 20px;
+    text-align: left;
+}
+
+.journal-label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.emotion_items {
+    height: 240px;
+}
+
+.emotion_feedback {
+    margin-top: 180px;
+    margin-left: 10px;
 }

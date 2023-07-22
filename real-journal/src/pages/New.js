@@ -1,14 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router";
+
 import Container from "react-bootstrap/esm/Container";
 import MyHeader from "../components/MyHeader";
-import "./New.css";
-import "../resources/css/journal.css";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import EmotionItem from "../components/EmotionItem";
+
+import "./page.css";
+import "../resources/css/journal.css";
 
 const New = ({onCreate}) => {
 
@@ -44,7 +46,6 @@ const New = ({onCreate}) => {
 
             } else {
                 setValidated(true);
-                console.log("Submit : " + JSON.stringify(journal));
 
                 onCreate(journal);
                 navigate("/");
@@ -97,12 +98,12 @@ const New = ({onCreate}) => {
             <MyHeader headText="New Journal"/>
             <Form className="new_form" validated={validated} onSubmit={handleSubmit}>
                 <Form.Group className="form_group" controlId="validationDate">
-                    <Form.Label className="form_label">Date</Form.Label>
+                    <Form.Label className="journal-label">Date</Form.Label>
                     <Form.Control required type="date" placeholder="Choose a date" name="date" onChange={changeJournal}/>
                     <Form.Control.Feedback type="invalid">Please choose a date.</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="form_group emotion_items">
-                    <Form.Label className="form_label">Emotion</Form.Label>
+                    <Form.Label className="journal-label">Emotion</Form.Label>
                     <Container>
                         <Row>
                             <Col><EmotionItem score="5" text="Very Good" innerRef={el => emotionItems.current[0] = el} onClick={() => selectEmotionCard(0)}/></Col>
@@ -115,7 +116,7 @@ const New = ({onCreate}) => {
                     <Form.Control.Feedback type="invalid" className="emotion_feedback">Please choose an emotion.</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="form_group" controlId="validation">
-                    <Form.Label className="form_label">Content</Form.Label>
+                    <Form.Label className="journal-label">Content</Form.Label>
                     <Form.Control required as="textarea" rows={10} name="content" onChange={changeJournal}/>
                     <Form.Control.Feedback type="invalid">Please input content at least 5 characters.</Form.Control.Feedback>
                 </Form.Group>

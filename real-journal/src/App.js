@@ -67,28 +67,29 @@ function App() {
     });
   }
 
-  const onEdit = (targetId, date, content, emotion) => {
+  const onUpdate = (journal) => {
+
     dispatch({
       type: "EDIT",
       data: {
-        id: targetId,
-        date: new Date(date).getTime(),
-        content,
-        emotion
+        id: journal.id,
+        date: journal.date,
+        content: journal.content,
+        emotion: journal.emotion,
       }
     });
   }
 
   return (
     <JournalStateContext.Provider value={data}>
-      <JournalDispatchContext.Provider value={{onCreate, onEdit, onRemove}}>
+      <JournalDispatchContext.Provider value={{onCreate, onUpdate, onRemove}}>
         <BrowserRouter>
           <div className='App'>
             <Routes>
               <Route path="/" element={<Home data={data}/>} />
               <Route path="/new" element={<New onCreate={onCreate}/>} />
               <Route path="/journal" element={<Journal />} />
-              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit" element={<Edit onUpdate={onUpdate} />} />
             </Routes>
           </div>
         </BrowserRouter>
