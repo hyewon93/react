@@ -1,0 +1,16 @@
+.emotion_wrapper {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 250px;
+}
+
+.emotion_card {
+    cursor: pointer;
+    position: absolute;
+    opacity: 20%;
+}
+
+.active > .emotion_card {
+    opacity: 100%;
+}
