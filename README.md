@@ -14,6 +14,14 @@ This project is Tic-Tac-Toe game from [the tutorial on React homepage](https://r
 
 This project is a simple To-do List with React.
 
+## simple-journal
+
+This project is a simple journal to practice CRUD.
+
+## real-journal
+
+This project is a real journal that was improved with more functions and design.
+
 
 ## Learn More
 React 기초 입문 프로젝트 – 흔하디 흔한 할 일 목록 만들기 (ko): https://velopert.com/3480
