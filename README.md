@@ -2,6 +2,9 @@
 
 This project has all reacts project made by studying React.
 
+## coin-tracker
+This project shows coin list from https://api.coinpaprika.com/v1/tickers.
+
 ## my_app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
